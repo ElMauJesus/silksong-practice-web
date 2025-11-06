@@ -1,0 +1,339 @@
+body {
+    margin: 0;
+    background-color: #eee;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+}
+
+/* ----- header/nav ----- */
+.header {
+    width: 100%;
+}
+
+/*boton*/
+.nav {
+    width: 100%;
+    background-color: #e54;
+    position: sticky;
+    top: 0px;
+}
+
+.nav__var {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.nav__var--item {
+    margin: 12px;
+}
+
+.nav__var--item a{
+    text-decoration: none;
+    color: #eee;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color .1s ease-in, color .1s ease-in;
+}
+.nav__var--item a:hover{
+    background-color: #d43;
+    color: #fff;
+}
+
+/* ----- ABOUT US ----- */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+.about {
+    width: 100%;
+}
+
+.about__container {
+    width: 90%;
+    height: 70vh;
+    margin: auto;
+    justify-content: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.about__item {
+    width: 40%;
+    background-color: #ccc;
+    align-content: center;
+}
+
+.about__item:first-child {
+    background-color: #ccc;
+    border-radius: 25px 0px 0px 25px;
+    padding: 20px;
+}
+
+.about__item p{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 17px;
+    color: #444;
+}
+
+.about__item:last-child {
+    background-image: url('image.png');
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0px 25px 25px 0px;
+    position: relative;
+}
+
+.about__item:last-child::before{
+    padding: 10px;
+    content: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua';
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+}
+.about__shadow {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #222, transparent 50%);
+    border-radius: 0px 0px 25px 0px;
+}
+
+/* ----- responsive ----- */
+@media screen and (max-width: 750px) {
+    .about__container {
+        flex-direction: column;
+    }
+    .about__item {
+        width: 80%;
+        height: 50vh;
+        margin: auto;
+    }
+    .about__item:first-child {
+        border-radius: 25px 25px 0px 0px;
+    }
+    .about__item:last-child {
+        border-radius: 0px 0px 25px 25px;
+        width: 87%;
+    }
+    .about__item:last-child::before{
+        bottom: 20px;
+    }
+    .about__shadow {
+        border-radius: 0px 0px 25px 25px;
+    }
+}
+
+/* ----- MAIN ----- */
+.main {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.main__container {
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    grid-template-rows: repeat(4, minmax(150px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.item1 {
+    grid-column: span 2;
+    background-image: url('image.png');
+}
+
+.item2 {
+    grid-column: span 2;
+    background-image: url('image.png');
+}
+.item3 {
+    background-image: url('img-silksong/image1.png');
+}
+.item4 {
+    background-image: url('img-silksong/image2.png');
+}
+.item5 {
+    background-image: url('img-silksong/image3.png');
+}
+.item6 {
+    background-image: url('img-silksong/image4.png');
+}
+.item7 {
+    background-image: url('img-silksong/image5.png');
+}
+.item8 {
+    background-image: url('img-silksong/image6.png');
+}
+.item9 {
+    background-image: url('img-silksong/image1.png');
+}
+.item10 {
+    background-image: url('img-silksong/image2.png');
+}
+.item11 {
+    grid-column: span 2;
+    background-image: url('image.png');
+}
+.item12 {
+    grid-column: span 2;
+    background-image: url('image.png');
+}
+
+.main__item {
+    background-color: #f76;
+    border-radius: 8px;
+    align-content: center;
+    object-fit: cover;
+    background-size: cover;
+    position: relative;
+}
+
+.main__item::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 8px;
+    transition: content .3s ease-in, color .3s ease-in, background .3s ease-in;
+}
+
+.main__item:hover::before {
+    content: 'Hollow Knight Silksong';
+    color: #fff;
+    background: linear-gradient(to bottom, #222, transparent 60%);
+}
+
+/* ----- responsive ----- */
+@media screen and (max-width: 1200px) {
+    .main__container {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        grid-template-rows: repeat(6, minmax(150px, 1fr));
+    }
+    .item1, .item2, .item11, .item12 {
+        grid-column: span 1;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .main__container {
+        grid-template-columns: repeat(1, minmax(250px, 1fr));
+        grid-template-rows: repeat(12, minmax(150px, 1fr));
+    }
+}
+
+/* ----- CONTACT ----- */
+.contact__form {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contact__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    gap: 20px;
+}
+
+label {
+    font-weight: 600;
+    color: #444;
+    margin: 5px;
+}
+
+.input {
+    margin: 10px;
+    padding: 12px;
+    width: 100%;
+    background-color: #ddd;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #d43;
+    border-radius: 4px 4px 0px 0px;
+    outline: none;
+    transition: outline .1s ease-in;
+}
+.input:focus {
+    outline: 1px solid #e54;
+}
+
+.textarea1 {
+    font-family: Montserrat, sans-serif;
+    margin: 5px;
+    width: 100%;
+    resize: none;
+    padding: 12px;
+    border: 1px solid #d43;
+}
+.textarea1:focus {
+    outline: 1px solid #e54;
+}
+
+.boton {
+    width: 40%;
+    height: 10%;
+    margin: auto;
+    border: 1px solid #e54;
+    border-radius: 12px;
+    background-color: #e54;
+}
+
+/* ----- responsive ----- */
+@media screen and (min-width: 1220px) {
+    .label3 {
+
+        width: 100%;
+    }
+    .label4 {
+        width: 100%;
+    }
+}
+
+/* ----- FOOTER ----- */
+.footer {
+    width: 100%;
+    margin: auto;
+    background-color: #222;
+    color: #eee;
+    align-content: center;
+}
+
+footer p{
+    width: 100%;
+    text-align: center;
+}
+
+footer p a{
+    text-decoration: none;
+    color: #15b;
+    transition: color .1s ease-in;
+}
+footer p a:hover{
+    color: #48e;
+}
+
+span {
+    color: #d43;
+    transition: text-shadow .3s ease-in;
+}
+span:hover {
+    text-shadow: 0px 0px 14px #d43;
+}
